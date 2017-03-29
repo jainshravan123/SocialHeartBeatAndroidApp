@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Tool Bar-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_above="@+id/btn_start_quiz"
+                android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                 android:padding="8dp"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:id="@+id/linearLayout3"
+                 android:visibility="gone">
+
+                 <android.support.v7.widget.CardView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:id="@+id/cv31"
+                     card_view:cardElevation="2dp"
+                     card_view:cardUseCompatPadding="true"
+                     android:layout_marginTop="10dp"
+                     android:layout_marginRight="5dp"
+                     android:layout_marginLeft="5dp">
+
+                     <ImageView
+                         android:layout_width="match_parent"
+                         android:layout_height="150dp"
+                         android:layout_below="@+id/toolbar"
+                         android:id="@+id/csr_image_view"
+                         android:src="@drawable/heartbeat_index"
+                         android:background="@color/colorPrimaryDark"/>
+
+                 </android.support.v7.widget.CardView>
+             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:padding="8dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/linearLayout2"
+                android:layout_below="@+id/linearLayout3"
+                android:visibility="gone">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cv3"
+                    card_view:cardElevation="2dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:selectableItemBackground">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_quiz_previous_score_caption"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Heartbeat Index Analysis"
+                            android:layout_alignParentTop="true"
+                            android:textColor="@color/black_color"
+                            android:padding="10dp" />
+
+                        <include
+                            layout="@layout/item_divider"
+                            android:layout_height="1dp"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/txt_quiz_previous_score_caption"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:id="@+id/include3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Highest Score"
+                            android:id="@+id/textView23"
+                            android:layout_below="@+id/txt_quiz_previous_score_caption"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:textColor="@color/material_blue_grey_80"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="09"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:id="@+id/txt_quiz_highest_score"
+                            android:layout_below="@+id/include3"
+                            android:layout_toRightOf="@+id/txt_quiz_previous_score_caption"
+                            android:layout_toEndOf="@+id/txt_quiz_previous_score_caption" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Previous Score"
+                            android:id="@+id/textView25"
+                            android:layout_below="@+id/txt_quiz_highest_score"
+                            android:layout_alignLeft="@+id/include3"
+                            android:layout_alignStart="@+id/include3"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/material_blue_grey_80"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Your Area of Interest"
+                            android:id="@+id/textView8"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textColor="@color/material_blue_grey_80"
+                            android:layout_below="@+id/txtPreviousScore"
+                            android:layout_alignLeft="@+id/textView25"
+                            android:layout_alignStart="@+id/textView25" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Education"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:id="@+id/txt_quiz_interest"
+                            android:layout_below="@+id/textView25"
+                            android:layout_alignLeft="@+id/txt_quiz_highest_score"
+                            android:layout_alignStart="@+id/txt_quiz_highest_score" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="08"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:id="@+id/txtPreviousScore"
+                            android:layout_below="@+id/textView23"
+                            android:layout_alignLeft="@+id/txt_quiz_highest_score"
+                            android:layout_alignStart="@+id/txt_quiz_highest_score" />
+
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+                <!-- Quiz Instructions-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:padding="8dp"
+                    android:layout_below="@+id/linearLayout2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/linearLayout1"
+                    android:visibility="gone">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cv2"
+                        card_view:cardElevation="2dp"
+                        card_view:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txt_quiz_instruction_caption"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="About the Quiz"
+                                android:layout_alignParentTop="true"
+                                android:textColor="@color/black_color"
+                                android:padding="10dp" />
+
+                            <include
+                                layout="@layout/item_divider"
+                                android:layout_height="1dp"
+                                android:layout_width="match_parent"
+                                android:layout_below="@+id/txt_quiz_instruction_caption"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:id="@+id/include2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="1. User can attempt the quiz any number of time."
+                                android:id="@+id/txt_instruction_1"
+                                android:layout_below="@+id/txt_quiz_instruction_caption"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="5dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="2. Heartbeat index of the user is the latest result of the quiz."
+                                android:id="@+id/txt_instruction_2"
+                                android:layout_below="@+id/txt_instruction_1"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="3. Quiz captures the heartbeat index score and also the area of interest of the user."
+                                android:id="@+id/txt_instruction_3"
+                                android:layout_below="@+id/txt_instruction_2"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="4. Area of Interest will be one among Education, Environment, Health and Affirmative Action."
+                                android:id="@+id/txt_instruction_4"
+                                android:layout_below="@+id/txt_instruction_3"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="4. After the completion of quiz,"
+                                android:id="@+id/txt_instruction_5"
+                                android:layout_below="@+id/txt_instruction_4"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="4.1. User can re attempt the same again."
+                                android:id="@+id/txt_instruction_6"
+                                android:layout_below="@+id/txt_instruction_5"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="4.2. Visit Mobile Geograhy to know impactful initiatives in his location, in his area of interest and join the same."
+                                android:id="@+id/txt_instruction_7"
+                                android:layout_below="@+id/txt_instruction_6"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="4.3. Visit CSR Information to get complete information of the CSR initiatives across globe."
+                                android:id="@+id/txt_instruction_8"
+                                android:layout_below="@+id/txt_instruction_7"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:textColor="@color/material_blue_grey_80"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingLeft="10dp"/>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            <!-- Start Quiz Button -->
+
+            </RelativeLayout>
+
+            </ScrollView>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/prgBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Quiz"
+                android:id="@+id/btn_start_quiz"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_button_corners_setting"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_margin="10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</android.support.v4.widget.DrawerLayout>

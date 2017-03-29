@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="10dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/viewReuseTips"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cv3"
+                    card_view:cardElevation="2dp"
+                    card_view:cardUseCompatPadding="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_below="@+id/toolbar"
+                        android:id="@+id/csr_image_view"
+                        android:src="@drawable/re_use_icon"
+                        android:background="@color/colorPrimaryDark"/>
+
+                 </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvData1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/cv3">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/catTipsDataHeadingTxtView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-dark"
+                        android:text="Reuse"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary" />
+
+                    <include
+                        android:id="@+id/include2"
+                        layout="@layout/item_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView1"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:id="@+id/catTipsDataTxtView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView1"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Reuse is the avenue for TCS associates to get interesting and useful recycling options, enabling better management of waste materials."
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/material_blue_grey_80" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvData2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/cvData1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/catTipsDataHeadingTxtView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-dark"
+                        android:text="Suggestion"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary" />
+
+                    <include
+                        android:id="@+id/include2"
+                        layout="@layout/item_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView2"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:id="@+id/catTipsDataTxtView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView2"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Suggestions are provided for waste categories whose disposal is challenging, either due to their generation in huge quantity or their nature."
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/material_blue_grey_80" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvData3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_margin="5dp"
+                android:layout_below="@+id/cvData2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/catTipsDataHeadingTxtView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-dark"
+                        android:text="User's View"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/colorPrimary" />
+
+                    <include
+                        android:id="@+id/include2"
+                        layout="@layout/item_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView3"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+
+                    <TextView
+                        android:id="@+id/catTipsDataTxtView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/catTipsDataHeadingTxtView3"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:text="Users can also like the suggestions or rate them as useful to them. Most popular and useful ideas would be promoted among associates and the least popular tips are removed periodically."
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="@color/material_blue_grey_80" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewReuseTips"
+        android:text="View Reuse Tips"
+        android:background="@drawable/rounded_button_corners_setting"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
