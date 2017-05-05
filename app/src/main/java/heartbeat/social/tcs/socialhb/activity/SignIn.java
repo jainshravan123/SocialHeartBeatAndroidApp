@@ -38,7 +38,7 @@ public class SignIn extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button   btnLogin;
     SweetAlertDialog sAlertDialog;
-    String TAG    = "SignInMain";
+    String TAG    = "SignInMain2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
