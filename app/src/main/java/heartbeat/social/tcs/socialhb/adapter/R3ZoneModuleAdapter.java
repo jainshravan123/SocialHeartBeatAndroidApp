@@ -19,8 +19,10 @@ import java.util.ArrayList;
 
 import heartbeat.social.tcs.socialhb.R;
 import heartbeat.social.tcs.socialhb.activity.modules.sub_modules.CSRInitCategoryDescription;
+import heartbeat.social.tcs.socialhb.activity.modules.sub_modules.R3ZoneModule.R3ZoneMostPopular;
 import heartbeat.social.tcs.socialhb.bean.CSRInit;
 import heartbeat.social.tcs.socialhb.bean.R3ZoneModule;
+import heartbeat.social.tcs.socialhb.utility.R3ZoneMostPopularModuleSelector;
 
 /**
  * Created by admin on 19/02/17.
@@ -115,16 +117,16 @@ public class R3ZoneModuleAdapter extends RecyclerView.Adapter<R3ZoneModuleAdapte
         @Override
         public void onClick(View v) {
 
-           /* int position = getAdapterPosition();
+            int position = getAdapterPosition();
 
-            int    module_id   = v_modules.get(position).getCsr_module_id();
-            String module_name = v_modules.get(position).getCsr_module_name();
-*/
+            int    module_id   = v_modules.get(position).getId();
+            String module_name = v_modules.get(position).getModule_name();
 
 
-          /*  ModuleSelector moduleSelector =  new ModuleSelector();
-            String pack_name              =  "heartbeat.social.tcs.socialhb.activity.modules.";
-            String main_module_name       =  moduleSelector.getClassNameByModuleId(module_id);
+
+            R3ZoneMostPopularModuleSelector r3ZoneMostPopularModuleSelector =  new R3ZoneMostPopularModuleSelector();
+            String pack_name              =  "heartbeat.social.tcs.socialhb.activity.modules.sub_modules.R3ZoneModule.";
+            String main_module_name       =  r3ZoneMostPopularModuleSelector.getClassNameByModuleId(module_id);
 
             String cmplt_module_name      = pack_name.concat(main_module_name);
 
@@ -136,13 +138,16 @@ public class R3ZoneModuleAdapter extends RecyclerView.Adapter<R3ZoneModuleAdapte
                 this.v_ctx.startActivity(intent);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
-            }*/
+            }
 
-            /*Intent desc_intent = new Intent(context, CSRInitCategoryDescription.class);
-            desc_intent.putExtra("module_id", String.valueOf(module_id));
-            desc_intent.putExtra("module_name", module_name);
+            /*
+            Intent desc_intent = new Intent(context, R3ZoneMostPopular.class);
+            //desc_intent.putExtra("module_id", String.valueOf(module_id));
+            //desc_intent.putExtra("module_name", module_name);
             desc_intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            this.v_ctx.startActivity(desc_intent);*/
+            this.v_ctx.startActivity(desc_intent);
+            */
+
         }
 
     }

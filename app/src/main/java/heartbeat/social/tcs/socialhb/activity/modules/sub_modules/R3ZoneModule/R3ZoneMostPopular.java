@@ -1,4 +1,4 @@
-package heartbeat.social.tcs.socialhb.activity.modules.sub_modules;
+package heartbeat.social.tcs.socialhb.activity.modules.sub_modules.R3ZoneModule;
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -22,37 +21,34 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import heartbeat.social.tcs.socialhb.R;
-import heartbeat.social.tcs.socialhb.activity.modules.CSRInitModule;
-import heartbeat.social.tcs.socialhb.adapter.CSRInitAdapter;
 import heartbeat.social.tcs.socialhb.adapter.R3ZoneModuleAdapter;
-import heartbeat.social.tcs.socialhb.bean.CSRInit;
+import heartbeat.social.tcs.socialhb.adapter.R3ZoneMostPopularAdapter;
 import heartbeat.social.tcs.socialhb.bean.R3ZoneModule;
+import heartbeat.social.tcs.socialhb.bean.R3ZoneMostPopularModule;
 import heartbeat.social.tcs.socialhb.bean.Web_API_Config;
 import heartbeat.social.tcs.socialhb.network.CheckInternetConnection;
-import heartbeat.social.tcs.socialhb.utility.CSRInitModuleSelector;
 import heartbeat.social.tcs.socialhb.utility.R3ZoneModuleSelector;
+import heartbeat.social.tcs.socialhb.utility.R3ZoneMostPopularModuleSelector;
 
-public class R3ZoneModules extends AppCompatActivity {
+public class R3ZoneMostPopular extends AppCompatActivity {
 
-
-    ProgressBar prgBar1;
-    RecyclerView recyclerView1;
-    Toolbar toolbar;
-    DrawerLayout mDrawerLayout;
-    ArrayList<R3ZoneModule> r3ZoneModules;
+    ProgressBar                prgBar1;
+    RecyclerView               recyclerView1;
+    Toolbar                    toolbar;
+    DrawerLayout               mDrawerLayout;
+    ArrayList<R3ZoneMostPopularModule>    r3ZoneMostPopularModules;
     StaggeredGridLayoutManager mStaggeredLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r3_zone_modules);
-
+        setContentView(R.layout.activity_r3_zone_most_popular);
 
         mDrawerLayout        = (DrawerLayout) findViewById(R.id.drawer_layout);
         prgBar1              = (ProgressBar) findViewById(R.id.prgBar1);
         recyclerView1        = (RecyclerView) findViewById(R.id.recycleView1);
         toolbar              = (Toolbar) findViewById(R.id.toolbar);
-        r3ZoneModules        = new ArrayList<R3ZoneModule>();
+        r3ZoneMostPopularModules        = new ArrayList<R3ZoneMostPopularModule>();
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -65,15 +61,15 @@ public class R3ZoneModules extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().setTitle("R3 Zone");
+        getSupportActionBar().setTitle("R3 Zone Most Popular");
 
         //Checking Internet Connection
         CheckInternetConnection checkInternetConnection = new CheckInternetConnection();
-        checkInternetConnection.showNetworkIdentifier(getApplicationContext(), R3ZoneModules.this);
+        checkInternetConnection.showNetworkIdentifier(getApplicationContext(), R3ZoneMostPopular.this);
 
         if(checkInternetConnection.checkingInternetConnection(getApplicationContext())){
-            //Getting Modules by hitting REST Web Service
-            getR3ZoneModules();
+            //Getting Most Popular Modules by hitting REST Web Service
+            getR3ZoneMostPopularModules();
         }
         else{
             prgBar1.setVisibility(View.GONE);
@@ -82,12 +78,12 @@ public class R3ZoneModules extends AppCompatActivity {
     }
 
 
-    public void getR3ZoneModules(){
+    private void getR3ZoneMostPopularModules(){
+
 
         prgBar1.setVisibility(View.VISIBLE);
 
-        String url = Web_API_Config.r3_zone_modules_api;
-        Log.e("CSR Initiative URL", url);
+        String url = Web_API_Config.r3_zone_most_popular_categories;
 
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url,
@@ -103,24 +99,24 @@ public class R3ZoneModules extends AppCompatActivity {
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject s_module  = (JSONObject) response.get(i);
                                 int module_id        = s_module.getInt("id");
-                                String module_name   = s_module.getString("module_name");
-                                String module_icon   = s_module.getString("module_icon");
+                                String module_name   = s_module.getString("name");
+                                String module_icon   = s_module.getString("icon");
                                 int module_status    = s_module.getInt("status");
 
-                                R3ZoneModuleSelector r3ZoneModuleSelector = new R3ZoneModuleSelector();
-                                String imageName = r3ZoneModuleSelector.getModuleNameByModuleId(module_id);
+                                R3ZoneMostPopularModuleSelector r3ZoneMostPopularModuleSelector = new R3ZoneMostPopularModuleSelector();
+                                String imageName = r3ZoneMostPopularModuleSelector.getModuleNameByModuleId(module_id);
                                 String uri = "@drawable/"+imageName.toLowerCase();
                                 int imageResource = getApplicationContext().getResources().getIdentifier(uri, null, getApplicationContext().getPackageName());
 
-                                R3ZoneModule r3ZoneModule = new R3ZoneModule();
-                                r3ZoneModule.setId(module_id);
-                                r3ZoneModule.setModule_icon(module_icon);
-                                r3ZoneModule.setModule_name(module_name);
-                                r3ZoneModule.setModule_status(module_status);
-                                r3ZoneModule.setModule_icon_id(imageResource);
+                                R3ZoneMostPopularModule r3ZoneMostPopularModule = new R3ZoneMostPopularModule();
+                                r3ZoneMostPopularModule.setId(module_id);
+                                r3ZoneMostPopularModule.setModule_icon(module_icon);
+                                r3ZoneMostPopularModule.setModule_name(module_name);
+                                r3ZoneMostPopularModule.setModule_status(module_status);
+                                r3ZoneMostPopularModule.setModule_icon_id(imageResource);
 
-                                if(r3ZoneModule.getModule_status() == 1){
-                                    r3ZoneModules.add(r3ZoneModule);
+                                if(r3ZoneMostPopularModule.getModule_status() == 1){
+                                    r3ZoneMostPopularModules.add(r3ZoneMostPopularModule);
                                 }
 
                             }
@@ -147,10 +143,9 @@ public class R3ZoneModules extends AppCompatActivity {
         mStaggeredLayoutManager.setSpanCount(2);
         recyclerView1.setLayoutManager(mStaggeredLayoutManager);
 
-        R3ZoneModuleAdapter r3ZoneModuleAdapter = new R3ZoneModuleAdapter(r3ZoneModules, getApplicationContext());
+        R3ZoneMostPopularAdapter r3ZoneMostPopularAdapter = new R3ZoneMostPopularAdapter(r3ZoneMostPopularModules, getApplicationContext());
 
-        recyclerView1.setAdapter(r3ZoneModuleAdapter);
+        recyclerView1.setAdapter(r3ZoneMostPopularAdapter);
 
     }
-
 }

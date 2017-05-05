@@ -1,25 +1,14 @@
 package heartbeat.social.tcs.socialhb.activity.modules;
 
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
-
-import java.util.ArrayList;
 
 import heartbeat.social.tcs.socialhb.R;
-import heartbeat.social.tcs.socialhb.activity.modules.sub_modules.R3ZoneModules;
-import heartbeat.social.tcs.socialhb.bean.CSRInit;
-
-import static heartbeat.social.tcs.socialhb.R.id.prgBar1;
-import static heartbeat.social.tcs.socialhb.R.id.recyclerView1;
-import static heartbeat.social.tcs.socialhb.R.id.toolbar;
+import heartbeat.social.tcs.socialhb.activity.modules.sub_modules.R3ZoneModule.R3ZoneModules;
 
 public class R3Zone extends AppCompatActivity {
 

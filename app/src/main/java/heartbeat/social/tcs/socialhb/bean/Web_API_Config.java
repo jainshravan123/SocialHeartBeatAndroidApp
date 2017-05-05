@@ -9,11 +9,13 @@ public class Web_API_Config
     //Local Server
     //public static String root_domain_url              =           "http://192.168.56.1:8080/SocialHearbeatWebServices/api/";
 
+
     //Local Server with Maven
     //public static String root_domain_url                =           "http://10.31.194.72:8080/socialheartbeat/api/";
+    //public static String root_domain_url                =           "http://192.168.1.10:6060/socialheartbeat/api/";
 
-    //Hosting Server
-    public static String root_domain_url              =           "https://socialheartbeat-bloggie.rhcloud.com/api/";
+    //Hosted Openshift Server
+    public static String root_domain_url                =           "https://socialheartbeat-bloggie.rhcloud.com/api/";
 
     //Image Server Path
     public static String root_image_url                 =           "https://socialheartbeat-bloggie.rhcloud.com/api/";
@@ -80,8 +82,9 @@ public class Web_API_Config
     public static String tips_according_to_category                 = root_domain_url + "tips/";
 
     //R3 Zone API
-    public static String root_r3_zone_api                           = root_domain_url + "rThree/";
+    public static String root_r3_zone_api                           = root_domain_url  + "rThree/";
     public static String r3_zone_modules_api                        = root_r3_zone_api + "modules/";
+    public static String r3_zone_most_popular_categories            = root_r3_zone_api + "most_popular_categories";
 
 
 }
