@@ -129,6 +129,7 @@ public class R3ZoneModuleAdapter extends RecyclerView.Adapter<R3ZoneModuleAdapte
             String main_module_name       =  r3ZoneMostPopularModuleSelector.getClassNameByModuleId(module_id);
 
             String cmplt_module_name      = pack_name.concat(main_module_name);
+            Log.e("Module ID " + module_id + " : ", cmplt_module_name);
 
 
             Intent intent = null;

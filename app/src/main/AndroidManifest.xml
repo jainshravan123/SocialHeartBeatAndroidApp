@@ -133,13 +133,12 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-
         <activity
             android:name=".activity.modules.sub_modules.R3ZoneModule.R3ZoneCategoryWise"
-            android:theme="@style/CustomStyle1"/>
+            android:theme="@style/CustomStyle1" />
         <activity
             android:name=".activity.modules.sub_modules.R3ZoneModule.R3ZoneMostPopular"
-            android:theme="@style/CustomStyle1"/>
+            android:theme="@style/CustomStyle1" />
 
         <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>
@@ -170,7 +169,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/my_google_api_key" />
 
-
+        <activity android:name=".activity.modules.sub_modules.R3ZoneModule.R3ZoneUserStore" />
+        <activity android:name=".activity.modules.sub_modules.R3ZoneModule.R3ZoneContribution"></activity>
     </application>
 
 </manifest>
