@@ -32,16 +32,16 @@ public class R3ZoneMostPopularModuleSelector {
         switch(id)
         {
             case 1:
-                class_name = "R3ZoneMostPopular";
+                class_name = "R3ZoneCategoryWise";
                 break;
             case 2:
                 class_name = "R3ZoneMostPopular";
                 break;
             case 3:
-                class_name = "R3ZoneMostPopular";
+                class_name = "R3ZoneUserStore";
                 break;
             case 4:
-                class_name = "R3ZoneMostPopular";
+                class_name = "R3ZoneContribution";
                 break;
             case 5:
                 class_name = "R3ZoneMostPopular";
